@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ChooseShapeVC.swift
 //  Always Write
 //
 //  Created by Sam Raudabaugh on 3/10/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ChooseShapeVC: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
