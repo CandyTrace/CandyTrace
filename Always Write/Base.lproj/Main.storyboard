@@ -73,6 +73,9 @@
                                     <constraint firstAttribute="height" constant="30" id="MDi-WT-6XR"/>
                                 </constraints>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="bMz-Ny-e7g" eventType="touchUpInside" id="VcX-BV-Ng8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -13,6 +13,8 @@ class TraceVC: UIViewController {
     var rawPoints = [Int]()
     @IBOutlet var drawingView: DrawingView!
     @IBOutlet weak var referenceView: ReferenceView!
+    var inCount = 0
+    var outCount = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,9 +39,9 @@ class TraceVC: UIViewController {
         draw()
         
         if referenceView.traceInBounds(location) {
-            print("IN")
+            inCount += 1
         } else {
-            print("OUT")
+            outCount += 1
         }
     }
     
@@ -49,7 +51,8 @@ class TraceVC: UIViewController {
     func draw() {
         UIGraphicsBeginImageContext(drawingView.frame.size)
         let context = UIGraphicsGetCurrentContext()
-        context!.setLineWidth(10.0)
+        context?.clear(drawingView.frame)
+        context!.setLineWidth(100.0)
         
         guard let pointsToDraw = drawingView.pointsBuffer.last else { return }
         drawingView.image?.draw(in: CGRect(x: 0, y: 0, width: drawingView.frame.size.width, height: drawingView.frame.size.height))
@@ -71,6 +74,25 @@ class TraceVC: UIViewController {
         UIGraphicsEndImageContext()
     }
 
+    @IBAction func donePressed(_ sender: Any) {
+        grade()
+    }
+    
+    func grade() {
+        let traceFill = drawingView.image?.fillCount(bitmapInfo: Constants.traceFillBitmapInfo) ?? 0
+        if inCount+outCount == 0 { return }
+        let accuracy = Double(inCount)/Double(inCount+outCount)
+//        let filled = Double(traceFill)/Double(expectFill)
+        let alert = UIAlertController(title: "Great Job!", message: "You traced with \(accuracy) accuracy and filled \(traceFill) of the shape!", preferredStyle: .alert)
+        let close = UIAlertAction(title: "OK", style: .default) { action in
+            self.drawingView.image = nil
+            self.inCount = 0
+            self.outCount = 0
+        }
+        alert.addAction(close)
+        present(alert, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -81,4 +103,8 @@ class TraceVC: UIViewController {
     }
     */
 
+}
+
+struct Constants {
+    static let traceFillBitmapInfo = CGImageAlphaInfo.premultipliedLast.rawValue
 }
