@@ -1,2 +1,2 @@
-# Candy Trace
+# CandyTrace
 Health Hackathon 2017
