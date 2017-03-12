@@ -39,4 +39,14 @@ class ReferenceView: UIView {
         return bezierPath?.contains(adjustedPoint) == true
     }
 
+    func expectedFill() -> Int {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.text = "E"
+        label.numberOfLines = 1
+        label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
+        label.font = UIFont(name: "Futura", size: 1000)!
+        label.frame = frame
+        return label.imageByRenderingView().fillCount(bitmapInfo: Constants.traceFillBitmapInfo)
+    }
 }

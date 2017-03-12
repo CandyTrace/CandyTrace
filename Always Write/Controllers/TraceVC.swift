@@ -53,6 +53,7 @@ class TraceVC: UIViewController {
         let context = UIGraphicsGetCurrentContext()
         context?.clear(drawingView.frame)
         context!.setLineWidth(100.0)
+        context?.setLineCap(.round)
         
         guard let pointsToDraw = drawingView.pointsBuffer.last else { return }
         drawingView.image?.draw(in: CGRect(x: 0, y: 0, width: drawingView.frame.size.width, height: drawingView.frame.size.height))
@@ -80,10 +81,16 @@ class TraceVC: UIViewController {
     
     func grade() {
         let traceFill = drawingView.image?.fillCount(bitmapInfo: Constants.traceFillBitmapInfo) ?? 0
+        print("traceFill = \(traceFill)")
+        let expectFill = referenceView.expectedFill()
+        print("expectFill = \(expectFill)")
         if inCount+outCount == 0 { return }
         let accuracy = Double(inCount)/Double(inCount+outCount)
-//        let filled = Double(traceFill)/Double(expectFill)
-        let alert = UIAlertController(title: "Great Job!", message: "You traced with \(accuracy) accuracy and filled \(traceFill) of the shape!", preferredStyle: .alert)
+        let completeness = Double(4*traceFill)/Double(expectFill)
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .percent
+        let scoreString = formatter.string(from: NSNumber(value: score(accuracy: accuracy, completeness: completeness))) ?? ""
+        let alert = UIAlertController(title: "Great Job!", message: "You scored \(scoreString)!", preferredStyle: .alert)
         let close = UIAlertAction(title: "OK", style: .default) { action in
             self.drawingView.image = nil
             self.inCount = 0
@@ -91,6 +98,16 @@ class TraceVC: UIViewController {
         }
         alert.addAction(close)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func score(accuracy: Double, completeness: Double) -> Double {
+        var score = accuracy
+        if completeness > 1 {
+            score -= 0.6212 * (completeness-1)
+        } else {
+            score -= 1.12 * (1-completeness)
+        }
+        return max(0, score)
     }
     
     /*

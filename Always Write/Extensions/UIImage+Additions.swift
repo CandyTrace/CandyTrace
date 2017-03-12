@@ -39,6 +39,17 @@ extension UIImage {
     }
     
     private func getColors(bitmapInfo: UInt32) -> NSCountedSet {
+        print("\(self.size.width), \(self.size.height)")
+        // get the ratio of width to height
+        let ratio = self.size.width/self.size.height
+        
+        // calculate new r_width and r_height
+        let r_width: CGFloat = 100
+        let r_height: CGFloat = r_width/ratio
+        
+        // resize the image to the new r_width and r_height
+        let cgImage = self.resize(CGSize(width: r_width, height: r_height)).cgImage
+        
         // get the width and height of the new image
         let width = cgImage?.width
         let height = cgImage?.height
