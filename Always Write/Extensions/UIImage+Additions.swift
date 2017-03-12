@@ -94,7 +94,7 @@ extension UIImage {
 
 extension UIView {
     func imageByRenderingView() -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, isOpaque, 0.0)
+        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
         layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()

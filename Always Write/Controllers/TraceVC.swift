@@ -9,6 +9,12 @@
 import UIKit
 import CoreText
 
+extension UINavigationBar {
+    override open func sizeThatFits(_ size: CGSize) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.size.width, height: 65.0)
+    }
+}
+
 class TraceVC: UIViewController {
     var rawPoints = [Int]()
     @IBOutlet var drawingView: DrawingView!
@@ -18,19 +24,21 @@ class TraceVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav-pink"), for: .default)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         rawPoints = []
         let touch = touches.first
-        let location = touch!.location(in: view)
+        let location = touch!.location(in: drawingView)
         rawPoints.append(Int(location.x))
         rawPoints.append(Int(location.y))
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
-        let location = touch!.location(in: view)
+        let location = touch!.location(in: drawingView)
         if rawPoints[rawPoints.count-2] != Int(location.x) || rawPoints[rawPoints.count-1] != Int(location.y) {
             rawPoints.append(Int(location.x))
             rawPoints.append(Int(location.y))
@@ -52,7 +60,7 @@ class TraceVC: UIViewController {
         UIGraphicsBeginImageContext(drawingView.frame.size)
         let context = UIGraphicsGetCurrentContext()
         context?.clear(drawingView.frame)
-        context!.setLineWidth(100.0)
+        context!.setLineWidth(47.9)
         context?.setLineCap(.round)
         
         guard let pointsToDraw = drawingView.pointsBuffer.last else { return }
@@ -86,7 +94,7 @@ class TraceVC: UIViewController {
         print("expectFill = \(expectFill)")
         if inCount+outCount == 0 { return }
         let accuracy = Double(inCount)/Double(inCount+outCount)
-        let completeness = Double(4*traceFill)/Double(expectFill)
+        let completeness = Double(traceFill)/Double(expectFill)
         let formatter = NumberFormatter()
         formatter.numberStyle = .percent
         let scoreString = formatter.string(from: NSNumber(value: score(accuracy: accuracy, completeness: completeness))) ?? ""
