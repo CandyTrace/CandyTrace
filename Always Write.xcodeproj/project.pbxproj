@@ -19,6 +19,8 @@
 		22D7ABAC1E73850400A7A638 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D7ABAA1E73850400A7A638 /* LaunchScreen.storyboard */; };
 		22D7ABB71E73850500A7A638 /* Always_WriteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7ABB61E73850500A7A638 /* Always_WriteTests.swift */; };
 		22D7ABC21E73850500A7A638 /* Always_WriteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7ABC11E73850500A7A638 /* Always_WriteUITests.swift */; };
+		22DD863A1E758A14007C3B76 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 22DD86391E758A10007C3B76 /* FontAwesome.otf */; };
+		22DD863C1E758D75007C3B76 /* ChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DD863B1E758D75007C3B76 /* ChartVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		22D7ABBD1E73850500A7A638 /* Always WriteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Always WriteUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D7ABC11E73850500A7A638 /* Always_WriteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Always_WriteUITests.swift; sourceTree = "<group>"; };
 		22D7ABC31E73850500A7A638 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22DD86391E758A10007C3B76 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		22DD863B1E758D75007C3B76 /* ChartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartVC.swift; path = Controllers/ChartVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 				22D7ABA31E73850400A7A638 /* ChooseShapeVC.swift */,
 				2220C3931E738997009B1084 /* TraceVC.swift */,
 				228C4EA31E75271200FA7EBF /* LessonSelectVC.swift */,
+				22DD863B1E758D75007C3B76 /* ChartVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 				2220C38E1E73871D009B1084 /* Controllers */,
 				2220C38F1E738722009B1084 /* Views */,
 				22D7ABA81E73850400A7A638 /* Assets.xcassets */,
+				22DD86391E758A10007C3B76 /* FontAwesome.otf */,
 				22D7ABAA1E73850400A7A638 /* LaunchScreen.storyboard */,
 				22D7ABAD1E73850400A7A638 /* Info.plist */,
 			);
@@ -284,6 +290,7 @@
 			files = (
 				22D7ABAC1E73850400A7A638 /* LaunchScreen.storyboard in Resources */,
 				22D7ABA91E73850400A7A638 /* Assets.xcassets in Resources */,
+				22DD863A1E758A14007C3B76 /* FontAwesome.otf in Resources */,
 				22D7ABA71E73850400A7A638 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +319,7 @@
 				2220C3961E7453C2009B1084 /* ReferenceView.swift in Sources */,
 				2220C3941E738997009B1084 /* TraceVC.swift in Sources */,
 				22D7ABA41E73850400A7A638 /* ChooseShapeVC.swift in Sources */,
+				22DD863C1E758D75007C3B76 /* ChartVC.swift in Sources */,
 				228C4EA41E75271200FA7EBF /* LessonSelectVC.swift in Sources */,
 				22D7ABA21E73850400A7A638 /* AppDelegate.swift in Sources */,
 				2220C3921E738957009B1084 /* DrawingView.swift in Sources */,

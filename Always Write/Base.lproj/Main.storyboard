@@ -12,7 +12,7 @@
         <!--Choose ShapeVC-->
         <scene sceneID="n4V-Nz-z7y">
             <objects>
-                <collectionViewController storyboardIdentifier="ChooseShapeVC" id="C12-mb-xI0" customClass="ChooseShapeVC" customModule="Always_Write" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="ChooseShapeVC" id="C12-mb-xI0" customClass="ChooseShapeVC" customModule="CandyTrace" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vmG-f1-EgW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,7 +48,7 @@
         <!--TraceVC-->
         <scene sceneID="hNg-SS-VYP">
             <objects>
-                <viewController id="bMz-Ny-e7g" customClass="TraceVC" customModule="Always_Write" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bMz-Ny-e7g" customClass="TraceVC" customModule="CandyTrace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oij-PP-FOP"/>
                         <viewControllerLayoutGuide type="bottom" id="p9U-MY-GyR"/>
@@ -221,11 +221,11 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XyF-28-UhA" customClass="ReferenceView" customModule="Always_Write" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XyF-28-UhA" customClass="ReferenceView" customModule="CandyTrace" customModuleProvider="target">
                                 <rect key="frame" x="60" y="250" width="649" height="619"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Wk-U4-rwT" customClass="DrawingView" customModule="Always_Write" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Wk-U4-rwT" customClass="DrawingView" customModule="CandyTrace" customModuleProvider="target">
                                 <rect key="frame" x="60" y="250" width="649" height="619"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="619" id="E6A-4J-Ehh"/>
@@ -253,18 +253,49 @@
                     <connections>
                         <outlet property="drawingView" destination="4Wk-U4-rwT" id="CxX-zp-cdV"/>
                         <outlet property="referenceView" destination="XyF-28-UhA" id="iw3-jf-YEw"/>
+                        <segue destination="lZo-6i-YDf" kind="show" identifier="ShowChart" id="hQg-n2-RPV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBv-eb-woQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1991" y="919"/>
+            <point key="canvasLocation" x="2013" y="919"/>
+        </scene>
+        <!--ChartVC-->
+        <scene sceneID="jsU-Zh-R3z">
+            <objects>
+                <viewController id="lZo-6i-YDf" customClass="ChartVC" customModule="CandyTrace" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uXc-cP-iJA"/>
+                        <viewControllerLayoutGuide type="bottom" id="7HL-ga-Gg2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rBk-wm-TOR">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graph" translatesAutoresizingMaskIntoConstraints="NO" id="tyc-pR-lXr">
+                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tyc-pR-lXr" firstAttribute="leading" secondItem="rBk-wm-TOR" secondAttribute="leading" id="DPV-5P-kQI"/>
+                            <constraint firstItem="tyc-pR-lXr" firstAttribute="bottom" secondItem="7HL-ga-Gg2" secondAttribute="top" id="hjd-i3-Hl1"/>
+                            <constraint firstItem="tyc-pR-lXr" firstAttribute="top" secondItem="uXc-cP-iJA" secondAttribute="bottom" id="wHA-Jk-pe1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QuX-yO-CRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2707.8125" y="916.99218749999989"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9m6-fM-9ea">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rjk-uP-PF7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vMJ-yE-fko">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="768" height="1024"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vMJ-yE-fko">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -280,7 +311,7 @@
         <!--Lesson SelectVC-->
         <scene sceneID="KQG-uN-Rnm">
             <objects>
-                <viewController id="5BW-zw-rer" customClass="LessonSelectVC" customModule="Always_Write" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5BW-zw-rer" customClass="LessonSelectVC" customModule="CandyTrace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1I5-Xu-C9q"/>
                         <viewControllerLayoutGuide type="bottom" id="NhY-CG-mfK"/>
@@ -312,6 +343,7 @@
     </scenes>
     <resources>
         <image name="box" width="649" height="618"/>
+        <image name="graph" width="768" height="798"/>
         <image name="lesson-select" width="709" height="834"/>
     </resources>
 </document>

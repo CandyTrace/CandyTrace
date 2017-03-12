@@ -31,6 +31,11 @@ class TraceVC: UIViewController {
         let profileButton = UIBarButtonItem(image: UIImage(named: "profile-icon"), style: .plain, target: self, action: #selector(profileTapped))
         profileButton.tintColor = .black
         navigationItem.setLeftBarButton(profileButton, animated: true)
+        
+        let graphButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(graphTapped))
+        graphButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "FontAwesome", size: 26)!], for: .normal)
+        graphButton.tintColor = .black
+        navigationItem.setRightBarButton(graphButton, animated: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -131,6 +136,10 @@ class TraceVC: UIViewController {
     
     func profileTapped() {
         let _ = navigationController?.popViewController(animated: true)
+    }
+    
+    func graphTapped() {
+        performSegue(withIdentifier: "ShowChart", sender: self)
     }
     
     @IBAction func tTapped(_ sender: Any) {
