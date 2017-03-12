@@ -9,6 +9,11 @@
 import UIKit
 
 class ReferenceView: UIView {
+    var shape = "E" {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
     var shapeLayer: CAShapeLayer?
     var bezierPath: UIBezierPath?
 
@@ -16,7 +21,7 @@ class ReferenceView: UIView {
         
         let font = UIFont(name: "Futura", size: 479)!
         
-        var unichars = [UniChar]("F".utf16)
+        var unichars = [UniChar](shape.utf16)
         var glyphs = [CGGlyph](repeating: 0, count: unichars.count)
         let gotGlyphs = CTFontGetGlyphsForCharacters(font, &unichars, &glyphs, unichars.count)
         if gotGlyphs {

@@ -127,6 +127,31 @@ class TraceVC: UIViewController {
         let _ = navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func tTapped(_ sender: Any) {
+        chooseShape("T")
+    }
+    @IBAction func lTapped(_ sender: Any) {
+        chooseShape("L")
+    }
+    @IBAction func iTapped(_ sender: Any) {
+        chooseShape("I")
+    }
+    @IBAction func hTapped(_ sender: Any) {
+        chooseShape("H")
+    }
+    @IBAction func fTapped(_ sender: Any) {
+        chooseShape("F")
+    }
+    @IBAction func eTapped(_ sender: Any) {
+        chooseShape("E")
+    }
+    
+    func chooseShape(_ shape: String) {
+        referenceView.shape = shape
+        drawingView.image = nil
+        inCount = 0
+        outCount = 0
+    }
     /*
     // MARK: - Navigation
 
