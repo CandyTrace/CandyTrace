@@ -11,6 +11,7 @@
 		2220C3941E738997009B1084 /* TraceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2220C3931E738997009B1084 /* TraceVC.swift */; };
 		2220C3961E7453C2009B1084 /* ReferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2220C3951E7453C2009B1084 /* ReferenceView.swift */; };
 		2220C3991E7480DA009B1084 /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2220C3981E7480DA009B1084 /* UIImage+Additions.swift */; };
+		228C4EA41E75271200FA7EBF /* LessonSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C4EA31E75271200FA7EBF /* LessonSelectVC.swift */; };
 		22D7ABA21E73850400A7A638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7ABA11E73850400A7A638 /* AppDelegate.swift */; };
 		22D7ABA41E73850400A7A638 /* ChooseShapeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7ABA31E73850400A7A638 /* ChooseShapeVC.swift */; };
 		22D7ABA71E73850400A7A638 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D7ABA51E73850400A7A638 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		2220C3931E738997009B1084 /* TraceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TraceVC.swift; path = Controllers/TraceVC.swift; sourceTree = "<group>"; };
 		2220C3951E7453C2009B1084 /* ReferenceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferenceView.swift; sourceTree = "<group>"; };
 		2220C3981E7480DA009B1084 /* UIImage+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Additions.swift"; path = "Extensions/UIImage+Additions.swift"; sourceTree = "<group>"; };
+		228C4EA31E75271200FA7EBF /* LessonSelectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonSelectVC.swift; sourceTree = "<group>"; };
 		22D7AB9E1E73850400A7A638 /* Always Write.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Always Write.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D7ABA11E73850400A7A638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22D7ABA31E73850400A7A638 /* ChooseShapeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseShapeVC.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				22D7ABA11E73850400A7A638 /* AppDelegate.swift */,
 				22D7ABA31E73850400A7A638 /* ChooseShapeVC.swift */,
 				2220C3931E738997009B1084 /* TraceVC.swift */,
+				228C4EA31E75271200FA7EBF /* LessonSelectVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				2220C3961E7453C2009B1084 /* ReferenceView.swift in Sources */,
 				2220C3941E738997009B1084 /* TraceVC.swift in Sources */,
 				22D7ABA41E73850400A7A638 /* ChooseShapeVC.swift in Sources */,
+				228C4EA41E75271200FA7EBF /* LessonSelectVC.swift in Sources */,
 				22D7ABA21E73850400A7A638 /* AppDelegate.swift in Sources */,
 				2220C3921E738957009B1084 /* DrawingView.swift in Sources */,
 				2220C3991E7480DA009B1084 /* UIImage+Additions.swift in Sources */,

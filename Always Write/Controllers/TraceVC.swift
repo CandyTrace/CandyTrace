@@ -26,6 +26,11 @@ class TraceVC: UIViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav-pink"), for: .default)
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Futura-Bold", size: 32)!]
+        title = "LESSON 3"
+        let profileButton = UIBarButtonItem(image: UIImage(named: "profile-icon"), style: .plain, target: self, action: #selector(profileTapped))
+        profileButton.tintColor = .black
+        navigationItem.setLeftBarButton(profileButton, animated: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -116,6 +121,10 @@ class TraceVC: UIViewController {
             score -= 1.12 * (1-completeness)
         }
         return max(0, score)
+    }
+    
+    func profileTapped() {
+        let _ = navigationController?.popViewController(animated: true)
     }
     
     /*
