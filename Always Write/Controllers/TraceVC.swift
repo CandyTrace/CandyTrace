@@ -61,11 +61,17 @@ class TraceVC: UIViewController {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     }
     
+    @IBAction func sliderChanged(_ sender: UISlider) {
+        referenceView.size = CGFloat(sender.value*1000)
+        drawingView.image = nil
+        inCount = 0
+        outCount = 0
+    }
     func draw() {
         UIGraphicsBeginImageContext(drawingView.frame.size)
         let context = UIGraphicsGetCurrentContext()
         context?.clear(drawingView.frame)
-        context!.setLineWidth(47.9)
+        context!.setLineWidth(referenceView.size/10)
         context?.setLineCap(.round)
         
         guard let pointsToDraw = drawingView.pointsBuffer.last else { return }

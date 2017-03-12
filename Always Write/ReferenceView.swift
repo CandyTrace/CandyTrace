@@ -14,12 +14,17 @@ class ReferenceView: UIView {
             setNeedsDisplay()
         }
     }
+    var size: CGFloat = 479.0 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
     var shapeLayer: CAShapeLayer?
     var bezierPath: UIBezierPath?
 
     override func draw(_ rect: CGRect) {
         
-        let font = UIFont(name: "Futura", size: 479)!
+        let font = UIFont(name: "Futura", size: size)!
         
         var unichars = [UniChar](shape.utf16)
         var glyphs = [CGGlyph](repeating: 0, count: unichars.count)

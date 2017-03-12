@@ -57,8 +57,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="AIp-e3-y1b">
-                                <rect key="frame" x="60" y="67" width="649" height="890"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AIp-e3-y1b">
+                                <rect key="frame" x="60" y="72" width="649" height="880"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="2YS-09-1Va">
                                         <rect key="frame" x="3.5" y="0.0" width="642" height="68"/>
@@ -185,11 +185,20 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8aR-6r-msj">
+                                        <rect key="frame" x="194.5" y="108" width="260" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="255.84" id="kdO-vx-8bj"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="sliderChanged:" destination="bMz-Ny-e7g" eventType="valueChanged" id="M8h-yb-aoT"/>
+                                        </connections>
+                                    </slider>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="box" translatesAutoresizingMaskIntoConstraints="NO" id="Q1m-bO-GjW">
-                                        <rect key="frame" x="0.0" y="148" width="649" height="619"/>
+                                        <rect key="frame" x="0.0" y="178" width="649" height="619"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPE-nb-33Y">
-                                        <rect key="frame" x="260" y="847" width="129" height="43"/>
+                                        <rect key="frame" x="260" y="837" width="129" height="43"/>
                                         <color key="backgroundColor" red="0.62352941176470589" green="0.83921568627450982" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="f4z-4b-Xhv"/>
@@ -211,11 +220,11 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XyF-28-UhA" customClass="ReferenceView" customModule="Always_Write" customModuleProvider="target">
-                                <rect key="frame" x="60" y="215" width="649" height="619"/>
+                                <rect key="frame" x="60" y="250" width="649" height="619"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Wk-U4-rwT" customClass="DrawingView" customModule="Always_Write" customModuleProvider="target">
-                                <rect key="frame" x="60" y="215" width="649" height="619"/>
+                                <rect key="frame" x="60" y="250" width="649" height="619"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="619" id="E6A-4J-Ehh"/>
                                     <constraint firstAttribute="width" constant="649" id="tlh-Rg-QEt"/>
@@ -227,8 +236,10 @@
                             <constraint firstItem="XyF-28-UhA" firstAttribute="leading" secondItem="Q1m-bO-GjW" secondAttribute="leading" id="102-6v-MVQ"/>
                             <constraint firstItem="XyF-28-UhA" firstAttribute="bottom" secondItem="4Wk-U4-rwT" secondAttribute="bottom" id="A9o-Bt-oVo"/>
                             <constraint firstItem="XyF-28-UhA" firstAttribute="trailing" secondItem="Q1m-bO-GjW" secondAttribute="trailing" id="CQZ-Z0-hby"/>
+                            <constraint firstItem="p9U-MY-GyR" firstAttribute="top" secondItem="AIp-e3-y1b" secondAttribute="bottom" constant="72" id="DMk-EG-STK"/>
                             <constraint firstItem="XyF-28-UhA" firstAttribute="top" secondItem="Q1m-bO-GjW" secondAttribute="top" id="Doz-BS-6nN"/>
                             <constraint firstItem="XyF-28-UhA" firstAttribute="bottom" secondItem="Q1m-bO-GjW" secondAttribute="bottom" id="MnW-fY-Nuk"/>
+                            <constraint firstItem="AIp-e3-y1b" firstAttribute="top" secondItem="Oij-PP-FOP" secondAttribute="bottom" constant="8" symbolic="YES" id="O16-0d-P8z"/>
                             <constraint firstItem="XyF-28-UhA" firstAttribute="top" secondItem="4Wk-U4-rwT" secondAttribute="top" id="PUE-Wf-gi8"/>
                             <constraint firstItem="AIp-e3-y1b" firstAttribute="centerY" secondItem="vT7-kS-P3J" secondAttribute="centerY" id="SW2-AJ-6bE"/>
                             <constraint firstItem="XyF-28-UhA" firstAttribute="trailing" secondItem="4Wk-U4-rwT" secondAttribute="trailing" id="bZQ-vZ-ojD"/>
