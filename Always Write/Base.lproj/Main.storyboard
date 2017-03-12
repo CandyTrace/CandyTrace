@@ -190,6 +190,8 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="255.84" id="kdO-vx-8bj"/>
                                         </constraints>
+                                        <color key="minimumTrackTintColor" red="0.95294117649999999" green="0.45098039220000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="maximumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="sliderChanged:" destination="bMz-Ny-e7g" eventType="valueChanged" id="M8h-yb-aoT"/>
                                         </connections>
