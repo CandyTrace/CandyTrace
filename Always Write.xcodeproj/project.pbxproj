@@ -44,7 +44,7 @@
 		2220C3951E7453C2009B1084 /* ReferenceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferenceView.swift; sourceTree = "<group>"; };
 		2220C3981E7480DA009B1084 /* UIImage+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Additions.swift"; path = "Extensions/UIImage+Additions.swift"; sourceTree = "<group>"; };
 		228C4EA31E75271200FA7EBF /* LessonSelectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonSelectVC.swift; sourceTree = "<group>"; };
-		22D7AB9E1E73850400A7A638 /* Always Write.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Always Write.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22D7AB9E1E73850400A7A638 /* CandyTrace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyTrace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D7ABA11E73850400A7A638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22D7ABA31E73850400A7A638 /* ChooseShapeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseShapeVC.swift; sourceTree = "<group>"; };
 		22D7ABA61E73850400A7A638 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		22D7AB9F1E73850400A7A638 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22D7AB9E1E73850400A7A638 /* Always Write.app */,
+				22D7AB9E1E73850400A7A638 /* CandyTrace.app */,
 				22D7ABB21E73850500A7A638 /* Always WriteTests.xctest */,
 				22D7ABBD1E73850500A7A638 /* Always WriteUITests.xctest */,
 			);
@@ -189,7 +189,7 @@
 			);
 			name = "Always Write";
 			productName = "Always Write";
-			productReference = 22D7AB9E1E73850400A7A638 /* Always Write.app */;
+			productReference = 22D7AB9E1E73850400A7A638 /* CandyTrace.app */;
 			productType = "com.apple.product-type.application";
 		};
 		22D7ABB11E73850500A7A638 /* Always WriteTests */ = {
@@ -471,7 +471,7 @@
 				INFOPLIST_FILE = "Always Write/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.cornell.Always-Write";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CandyTrace;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -484,7 +484,7 @@
 				INFOPLIST_FILE = "Always Write/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.cornell.Always-Write";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CandyTrace;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
